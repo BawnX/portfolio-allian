@@ -2,7 +2,7 @@ name: Vercel Deployment Production
 
 env:
     VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
-    VERCEL_PROYECT_ID: ${{secrets.VERCEL_PROYECT_ID}}
+    VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROYECT_ID}}
     FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
 
 on:
