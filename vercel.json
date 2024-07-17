@@ -1,4 +1,4 @@
 {
-    "buildCommand": "next build",
-    "installCommand": "bun install --production"
+    "buildCommand": "npm run build",
+    "installCommand": "npm install --save-prod"
 }
