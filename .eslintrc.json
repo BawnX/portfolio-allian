@@ -1,3 +1,51 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "next/core-web-vitals",
+    "standard-with-typescript",
+    "airbnb-typescript/base",
+    "plugin:json/recommended-legacy"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/semi": [
+      "error",
+      "always"
+    ],
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "@typescript-eslint/space-before-function-paren": [
+      "error",
+      "never"
+    ],
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": false,
+        "classes": true
+      }
+    ],
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "no-console": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "react/react-in-jsx-scope": "off",
+    "json/*": [
+      "error",
+      "allowComments"
+    ]
+  }
 }
