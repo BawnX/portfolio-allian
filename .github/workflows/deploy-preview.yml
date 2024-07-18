@@ -11,9 +11,13 @@ permissions:
 
 on:
   push:
-    branches: [ preview ]
+    branches: 
+      - "preview"
   pull_request:
-    branches: [ preview ]
+    types:
+      - closed 
+    branches: 
+      - "preview"
       
 jobs:
   security:
