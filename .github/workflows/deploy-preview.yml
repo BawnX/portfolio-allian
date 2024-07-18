@@ -62,6 +62,8 @@ jobs:
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
           allow_issue_writing: true
+          fail_action: false
+          issue_title: Security Tests
       
       - name: Stop Next.js app
         if: always()
