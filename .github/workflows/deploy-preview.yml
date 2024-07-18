@@ -61,22 +61,11 @@ jobs:
           target: 'http://localhost:3000'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
+          allow_issue_writing: true
       
       - name: Stop Next.js app
         if: always()
         run: kill $(lsof -t -i:3000) || true
-      
-      - name: Upload ZAP report
-        uses: actions/upload-artifact@v2
-        with:
-          name: ZAP Report
-          path: report.html
-      
-      - name: Fail on high alerts
-        if: failure()
-        run: |
-          echo "ZAP scan failed due to high alerts"
-          exit 1
 
   deploy:
     runs-on: ubuntu-latest
