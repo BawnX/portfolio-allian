@@ -20,7 +20,7 @@ on:
       - "preview"
       
 jobs:
-  analyze:
+  analyze_code:
     name: Analyze (${{ matrix.language }})
     runs-on: ${{ (matrix.language == 'swift' && 'macos-latest') || 'ubuntu-latest' }}
     timeout-minutes: ${{ (matrix.language == 'swift' && 120) || 360 }}
@@ -125,7 +125,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: ["security", "test", "zap"]
+    needs: ["security", "test", "zap", "analyze_code"]
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
