@@ -37,9 +37,9 @@ jobs:
       - run: npm ci --force
       - run: npm run test
 
-  zap_scan:
+  zap:
     runs-on: ubuntu-latest
-    name: Scan the Next.js application
+    name: Scan with owasp zap
     steps:
       - uses: actions/checkout@v4
       
@@ -75,7 +75,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: ["security", "test"]
+    needs: ["security", "test", "zap"]
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
