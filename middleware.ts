@@ -3,9 +3,9 @@ import type { NextRequest } from 'next/server';
 import { contentSecurityPolicyHeader } from './app/utils/headers';
 
 export function middleware(request: NextRequest) {
-  const response = NextResponse.next();
+  let response = NextResponse.next();
 
-  contentSecurityPolicyHeader(response);
+  response = contentSecurityPolicyHeader(response);
 
   // Anti-clickjacking header
   response.headers.set('X-Frame-Options', 'DENY');
