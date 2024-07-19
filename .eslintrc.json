@@ -7,7 +7,9 @@
     "next/core-web-vitals",
     "standard-with-typescript",
     "airbnb-typescript/base",
-    "plugin:json/recommended-legacy"
+    "plugin:json/recommended-legacy",
+    "plugin:sonar/base",
+    "plugin:sonar/recommended"
   ],
   "parserOptions": {
     "project": "./tsconfig.json"
