@@ -19,12 +19,11 @@ export function middleware(request: NextRequest) {
   // X-Content-Type-Options header
   response.headers.set('X-Content-Type-Options', 'nosniff');
 
-  // Sec-Fetch headersz
+  // Sec-Fetch headers
   response.headers.set('Sec-Fetch-Dest', 'document');
   response.headers.set('Sec-Fetch-Mode', 'navigate');
   response.headers.set('Sec-Fetch-Site', 'same-origin');
   response.headers.set('Sec-Fetch-User', '?1');
-
   return response;
 }
 
